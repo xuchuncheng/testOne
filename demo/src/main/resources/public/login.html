@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<style>
+    *{
+        margin:0 auto;
+        padding:0;
+    }
+    table,td{
+        border: black solid 0.5px;
+    }
+</style>
+<body>
+<div>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" style="font-size: 40px">登陆图书管理系统</td>
+            </tr>
+            <tr>
+                <td width="100px" style="background: RGB(221,160,221)">用户名</td>
+                <td> <input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td style="background: RGB(221,160,221)">密码</td>
+                <td><input type="password" id="pwd"></td>
+            </tr>
+            <tr>
+                <td  colspan="2" align="center"><input type="button" value="登陆" onclick="tj()" style="width: 80px"></td>
+            </tr>
+            <tr>
+                <td  colspan="2" id="show"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+<script>
+    function tj() {
+        var name=$("#name").val();
+        var pwd=$("#pwd").val();
+        $.ajax({
+            url:"/logIn",
+            type:"POST",
+            data:{"name":name,"password":pwd},
+            dataType:"JSON",
+            success:function(data){
+                alert(data.show)
+                if(data.show=="登陆成功"){
+                    window.location.href='/index.html?id='+data.id+'';
+                }else{
+                    $("#show").html(data.show)
+                }
+            },
+            error:function(){
+
+            }
+        });
+    }
+</script>
+</html>

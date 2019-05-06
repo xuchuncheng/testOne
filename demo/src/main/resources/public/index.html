@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>首页</title>
+    <script src="/js/jquery-3.2.1.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    //获取地址栏参数的方法
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+</script>
+</html>

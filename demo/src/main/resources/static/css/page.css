@@ -1,0 +1,38 @@
+	*{margin:0 auto;padding:0;}/*内外边距0px居中*/
+	#overall{width: 900px;text-align: center;} /*外层容器宽度和内容居中*/
+	.inputOne{
+		padding: 0 5px;
+		width: 40px;
+		border: solid thin #ddd;
+		height: 22px;
+		outline: none;
+		text-align: center;
+		font-size: 16px;
+		}
+	div.page ul
+	{
+	    list-style:none; /* 去掉ul前面的符号 */
+	    margin: 0px; /* 与外界元素的距离为0 */
+	    padding: 0px; /* 与内部元素的距离为0 */
+
+	}
+	/* 所有class为menu的div中的ul中的li样式 */
+	div.page ul li
+	{
+
+	    float:left; /* 向左漂移，将竖排变为横排 */
+	}
+	 a{text-decoration: none;} /* 不显示超链接下划线 */
+	/* 所有class为menu的div中的ul中的a样式(鼠标移动到元素中的样式) */
+	div.page ul li a:hover
+	{
+	    background-color: #bfcbd6; /* 背景色 */
+	    color: #465c71; /* 文字颜色 */
+	}
+	/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+	div.page ul li a:active
+	{
+	    background-color: #465c71; /* 背景色 */
+	    color: #cfdbe6; /* 文字颜色 */
+	    text-decoration: none; /* 不显示超链接下划线 */
+	}
